@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Bar Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    #searchBarContainer {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+#searchBarContainer.hidden {
+  transform: translateX(0);
+}
+
+#searchBarContainer input,
+#searchBarContainer button {
+  display: block;
+  margin: 5px 0;
+}
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const showSearchButton = document.getElementById('showSearchButton');
+  const searchBarContainer = document.getElementById('searchBarContainer');
+
+  showSearchButton.addEventListener('click', function () {
+    searchBarContainer.classList.toggle('hidden');
+  });
+});
+
+</script>
+<body>
+
+  <button id="showSearchButton">Show Search Bar</button>
+  <div id="searchBarContainer" class="hidden">
+    <input type="text" id="searchInput" placeholder="Type your search...">
+    <button id="searchButton">Search</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
